@@ -30,7 +30,7 @@ with open("ligand_list.csv","r",newline='') as f:
 	for x in reader:
 		
 
-		subprocess.call(['bash', 'pipeline.sh',x[0], x[counter]],shell=False)
+		subprocess.call(['bash', 'pdb_converter.sh',x[0], x[counter]],shell=False)
 		progress_counter=progress_counter+1
 		#percent_complete=(progress_counter/row_sum)*100	
 		#row_sum=0
