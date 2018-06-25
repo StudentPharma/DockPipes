@@ -32,9 +32,7 @@ with open("ligand_list.csv","r",newline='') as f:
 
 		subprocess.call(['bash', 'pdb_converter.sh',x[0], x[counter]],shell=False)
 		progress_counter=progress_counter+1
-		#percent_complete=(progress_counter/row_sum)*100	
-		#row_sum=0
-		#print ("Conversion Progress: "+str(round(percent_complete,2))+"%")
+		
 
 	print(progress_counter,"Molecules converted to PDB")
 	f.close()
