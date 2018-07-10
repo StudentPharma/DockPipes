@@ -6,7 +6,7 @@ counter =0
 row_sum=0
 
 
-with open("ligand_list.csv","r",newline='') as f:
+with open("curated_ligand_list.csv","r",newline='') as f:
 	
 	reader=csv.reader(f, delimiter='\t')
 	
@@ -21,17 +21,17 @@ with open("ligand_list.csv","r",newline='') as f:
 		break
 	
 	
-	
+	#We have already gone past the first row, no need to skip it. 
 	
 	progress_counter=0
 	percent_complete=0
-	print("Running")
+	
 
 	for x in reader:
 		
-
-		subprocess.call(['bash', 'pdb_converter.sh',x[0], x[counter]],shell=False)
-		progress_counter=progress_counter+1
+		if x[counter] is not "":	#some SMILES are empty
+			subprocess.call(['bash', 'ligand_pdb_converter.sh',x[0], x[counter]],shell=False)
+			progress_counter=progress_counter+1
 		
 
 	print(progress_counter,"Molecules converted to PDB")
