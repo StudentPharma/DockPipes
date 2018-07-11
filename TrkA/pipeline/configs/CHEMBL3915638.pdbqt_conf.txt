@@ -1,0 +1,29 @@
+receptor= receptor/1wwa.pdbqt
+ligand= pdbqt/CHEMBL3915638.pdbqt
+
+
+
+center_x= -36
+
+center_y= 76.07
+
+center_z= 20.47
+
+
+
+size_x= 38
+
+size_y= 44
+
+size_z= 44
+
+
+
+out= output/CHEMBL3915638.pdbqt
+
+
+log= logs/CHEMBL3915638.pdbqt.txt
+
+
+exhaustiveness= 8
+energy_range= 4
